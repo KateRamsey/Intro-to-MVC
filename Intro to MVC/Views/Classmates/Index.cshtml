@@ -1,7 +1,12 @@
-﻿
+﻿@model IEnumerable<Intro_to_MVC.Models.Classmate>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<p>stuff and stuff </p>
+<h1>Our Class</h1>
+<ul>
+    @foreach (var c in Model)
+    {
+        <li>@c.Name is @(c.Height/12)' @(c.Height%12)" tall and has @c.HairColor hair</li>
+    }
+</ul>
